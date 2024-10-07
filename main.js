@@ -42,20 +42,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     move();
 });
-
-setInterval(() => {
-    if(hover) {
-        var offset = item.getBoundingClientRect();
-
-        x = offset.left + item.offsetWidth / 2;
-        y = offset.top + item.offsetHeight / 2;
+const isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
-    
-    finalX = finalX + (-finalX+x) / 3;
-    finalY = finalY + (-finalY+y) / 3;
+};
 
-    cursor.style.transform = `translate(${Math.round(finalX-7.5)}px, ${Math.round(finalY-7.5)}px)`;
-}, 10)
+
+if (!isMobile.any()){
+    setInterval(() => {
+        if(hover) {
+            var offset = item.getBoundingClientRect();
+    
+            x = offset.left + item.offsetWidth / 2;
+            y = offset.top + item.offsetHeight / 2;
+        }
+        
+        finalX = finalX + (-finalX+x) / 2;
+        finalY = finalY + (-finalY+y) / 2;
+    
+        cursor.style.transform = `translate(${Math.round(finalX-7.5)}px, ${Math.round(finalY-7.5)}px)`;
+    }, 10)
+}
 
 addEventListener("mousemove", (event) => {
     x = event.clientX;
