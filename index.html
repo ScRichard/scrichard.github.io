@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Schmidt | Developer</title>
+
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <!-- Oswald font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                    <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+        </svg>
+        <div class="gradients-container">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="g4"></div>
+            <div class="g5"></div>
+            <div class="interactive"></div>
+        </div>
+    </div>
+    <div class="panel" style="--vanish: 0%;">
+        <div class="icon">
+            <img src="imgs/logo.png" alt="logo" width="200px">
+        </div>
+        <div class="header">
+            <h1>Richard Schmidt</h1>
+            <span>What's up! I'm Richard, a Fullstack website developer.</span>
+        </div>
+        <div class="navigation">
+            <a id="about_button" class="vanishable">About me</a>
+            <a id="skills_button" class="vanishable">Skills</a>
+            <a id="contact_button">Contact</a>
+        </div>
+        <div class="socials">
+            <a href="https://www.instagram.com/rchrd.sch" target="_blank"><i class='bx bxl-instagram' ></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100078466874052" target="_blank"><i class='bx bxl-facebook-square'></i></a>
+            <a id="email"><i class='bx bx-envelope' ></i></a>
+            <a href="https://github.com/ScRichard" target="_blank"><i class='bx bxl-github' ></i></a>
+        </div>
+    </div>
+
+    <div class="about" style="--vanish: 150%;" toggled="0">
+        <nav><img src="imgs/logo.png" alt="Logo" width="50px"> <a class="closeButton" id="closeAbout"><i class='bx bx-x' ></i></a></nav>
+        
+        <div class="icon-custom"></div>
+        <div class="text">
+            Hi, again... I'm <b>Richard</b>. Based in <b>Slovakia</b>. I'm <b>Junior Fullstack developer</b>, mostly focusing on <b>Back-end</b> features. Currently I am working on my Project whitch will be avalibe for everyone soon. Also, I'm currently studying on high school.
+        </div>
+        <div class="project">
+            <div class="background"></div>
+            <div class="title">Project Gothaj</div>
+            <div class="date">2022-2024</div>
+            <div class="decription">A Minecraft hack client</div>
+        </div>
+        <h1 class="header">About Me</h1>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
