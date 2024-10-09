@@ -184,6 +184,13 @@ a {
     border-radius: 50%;
     z-index: 99;
     pointer-events: none;
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
+    @media screen and (max-height: 600px) {
+        display: none;
+    }
+    
 }
 .closeButton {
     background-color: #414141;
@@ -222,6 +229,22 @@ a {
     align-items: center;
     justify-content: space-evenly;
     box-shadow: 0px 0px 3px 3px #0000005b;
+
+    @media screen and (max-width: 600px ) {
+        width: 90%;
+        padding: 10px;
+        height: auto;
+
+        gap: 1.5rem;
+    }
+
+    @media screen and (max-height: 600px ) {
+        width: 90%;
+        padding: 10px;
+        height: auto;
+        gap: 1.5rem;
+    }
+
 
     &.hidden {
         top: -100%;
@@ -262,6 +285,8 @@ a {
     & .navigation {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         
         color: #fff;
         gap:10px;
@@ -294,6 +319,7 @@ a {
     & .socials {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 10px;
         & a {
             background-color: #414141;
@@ -337,6 +363,24 @@ a {
     backdrop-filter: blur(10px);
     gap: 20px;
     transition: all 0.6s ease-in-out;
+
+    @media screen and (max-width: 600px ) {
+        width: 90%;
+        padding: 10px;
+
+        height: 90svh;
+
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    @media screen and (max-height: 600px ) {
+        width: 90%;
+        padding: 10px;
+        height: 90svh;
+        gap: 1.5rem;
+        align-items: center;
+    }
     & .header {
         color: #ffffff3d;
     }
@@ -418,6 +462,24 @@ nav {
     background-image: url('./imgs/me.jpg');
     background-size: cover;
     border: 3px solid #5900ff;
+
+    @media screen and (max-width: 600px ) {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        display: block;
+        left: 0%;
+        transform: translate(0%, 0%);
+    }
+
+    @media screen and (max-height: 600px ) {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        display: block;
+        left: 0%;
+        transform: translate(0%, 0%);
+    }
 
     &::before {
         content:"";
