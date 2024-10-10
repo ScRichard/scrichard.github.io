@@ -35,43 +35,95 @@
             <div class="interactive"></div>
         </div>
     </div>
-    <div class="panel" style="--vanish: 0%;">
-        <div class="icon">
-            <img src="imgs/logo.png" alt="logo" width="200px">
+    <div class="custom-section">
+        <div class="panel animate" style="--vanish: 0%;">
+            <div class="icon">
+                <img src="imgs/logo.png" alt="logo" width="200px">
+            </div>
+            <div class="header">
+                <h1>Richard Schmidt</h1>
+                <span>What's up! I'm Richard, a Fullstack website developer.</span>
+            </div>
+            <div class="navigation">
+                <a id="about_button" class="vanishable">About me</a>
+                <a id="skills_button" class="vanishable">Skills</a>
+                <a id="contact_button">Contact</a>
+            </div>
+            <div class="socials">
+                <a href="https://www.instagram.com/rchrd.sch" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100078466874052" target="_blank"><i class='bx bxl-facebook-square'></i></a>
+                <a id="email"><i class='bx bx-envelope' ></i></a>
+                <a href="https://github.com/ScRichard" target="_blank"><i class='bx bxl-github' ></i></a>
+            </div>
         </div>
-        <div class="header">
-            <h1>Richard Schmidt</h1>
-            <span>What's up! I'm Richard, a Fullstack website developer.</span>
+    
+        <div class="second animate" id="about" style="--vanish: 150%;" toggled="0">
+            <nav ignore="true"><img src="imgs/logo.png" alt="Logo" width="50px"> <a class="closeButton" id="closeAbout"><i class='bx bx-x' ></i></a></nav>
+            
+            <div class="icon-custom" ignore="true"></div>
+            <div class="text">
+                Hi, I'm Richard. I'm a <b>Junior Fullstack Developer</b> based in <b>Slovakia</b>, with a strong focus on <b>back-end development</b>. I'm currently working on an exciting project that will be <b>publicly available soon</b>. In addition to my development work, I'm also a <b>high school student</b>, balancing my studies with my passion for coding and building innovative solutions.
+            </div>
+            <div class="project">
+                <div class="background"></div>
+                <div class="title">Project Gothaj</div>
+                <div class="date">2022-2024</div>
+                <div class="decription">The best client among the gods</div>
+            </div>
+            <div class="project">
+                <div class="background"></div>
+                <div class="title">Animation Utils</div>
+                <div class="date">Github</div>
+                <div class="decription">Feature for visual interfaces in Python</div>
+            </div>
+            <h1 class="header" ignore="true">About Me</h1>
         </div>
-        <div class="navigation">
-            <a id="about_button" class="vanishable">About me</a>
-            <a id="skills_button" class="vanishable">Skills</a>
-            <a id="contact_button">Contact</a>
-        </div>
-        <div class="socials">
-            <a href="https://www.instagram.com/rchrd.sch" target="_blank"><i class='bx bxl-instagram' ></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100078466874052" target="_blank"><i class='bx bxl-facebook-square'></i></a>
-            <a id="email"><i class='bx bx-envelope' ></i></a>
-            <a href="https://github.com/ScRichard" target="_blank"><i class='bx bxl-github' ></i></a>
+
+        <div class="second overflow animate" id="skills" style="--vanish: 150%;" toggled="0">
+            <nav ignore="true"><img src="imgs/logo.png" alt="Logo" width="50px"> <a class="closeButton" id="closeSkills" ><i class='bx bx-x' ></i></a></nav>
+            <div class="grid-layout">
+                <div class="project">
+                    <div class="background"></div>
+                    <div class="title">HTML & CSS</div>
+                    <div class="description">Expertise in building well-structured, semantic websites with HTML and designing visually appealing layouts with CSS. I can create responsive websites that look great on any device.</div>
+                </div>
+            
+                <div class="project">
+                    <div class="background"></div>
+                    <div class="title">JavaScript</div>
+                    <div class="description">Strong knowledge of JavaScript for front-end interactivity and dynamic web applications. Familiar with modern JavaScript frameworks and libraries like React and jQuery.</div>
+                </div>
+            
+                <div class="project">
+                    <div class="background"></div>
+                    <div class="title">Responsive Web Design</div>
+                    <div class="description">Proficient in making websites responsive using CSS Flexbox, Grid, and media queries, ensuring they adapt smoothly to various screen sizes from desktops to mobile devices.</div>
+                </div>
+            
+                <div class="project">
+                    <div class="background"></div>
+                    <div class="title">Backend Development (Java, Python)</div>
+                    <div class="description">Experienced in backend development using Node.js and Python, with a focus on creating scalable, efficient applications and working with server-side logic.</div>
+                </div>
+            
+                <div class="project">
+                    <div class="background"></div>
+                    <div class="title">Database Management (SQL, MongoDB)</div>
+                    <div class="description">Skilled in managing databases with SQL and MongoDB, including designing schemas, optimizing queries, and ensuring data integrity for web applications.</div>
+                </div>
+            
+                <div class="project">
+                    <div class="background"></div>
+                    <div class="title">Other principles</div>
+                    <div class="description">Problem-solving skills, using logical thinking and creative approaches to debug code, optimize performance, and develop solutions and more...</div>
+                </div>
+            </div>
+
+            <h1 class="header" ignore="true">Skills</h1>
         </div>
     </div>
-
-    <div class="about" style="--vanish: 150%;" toggled="0">
-        <nav><img src="imgs/logo.png" alt="Logo" width="50px"> <a class="closeButton" id="closeAbout"><i class='bx bx-x' ></i></a></nav>
-        
-        <div class="icon-custom"></div>
-        <div class="text">
-            Hi, again... I'm <b>Richard</b>. Based in <b>Slovakia</b>. I'm <b>Junior Fullstack developer</b>, mostly focusing on <b>Back-end</b> features. Currently I am working on my Project whitch will be avalibe for everyone soon. Also, I'm currently studying on high school.
-        </div>
-        <div class="project">
-            <div class="background"></div>
-            <div class="title">Project Gothaj</div>
-            <div class="date">2022-2024</div>
-            <div class="decription">A Minecraft hack client</div>
-        </div>
-        <h1 class="header">About Me</h1>
-    </div>
-
+    <script src="animations.js"></script>
+    <script src="alerts.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

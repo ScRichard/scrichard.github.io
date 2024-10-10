@@ -9,15 +9,27 @@ var hover = false;
 
 var item = null;
 
+const skills_button = document.getElementById("skills_button");
+
 const about_button = document.getElementById("about_button");
 
 const panel = document.querySelector(".panel");
-
 var x = 0;
 var y = 0;
 var finalX = 0;
 var finalY = 0;
 
+function removeAnimation() {
+    const contents = document.querySelectorAll(".animated_content");
+    for (var el in contents) {
+        try {
+            contents[el].style.animationName = "name";
+        }catch {
+
+        }
+       
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const interBubble = document.querySelector('.interactive');
@@ -69,17 +81,48 @@ addEventListener("mousemove", (event) => {
 });
 
 about_button.onclick = () => {
+    removeAnimation();
+    callAll();
     toggleAbout();
 };
 document.getElementById("closeAbout").onclick = () => {
-    document.querySelector(".about").classList.remove("toggle")
+    document.querySelector("#about").classList.remove("toggle")
     panel.style = "--vanish: " + 0 + "%";
 
     toggleAbout();
+    removeAnimation();
+    callAll();
 };
 
+skills_button.onclick = () => {
+    toggleSkills();
+    removeAnimation();
+    callAll();
+};
+document.getElementById("closeSkills").onclick = () => {
+    document.querySelector("#skills").classList.remove("toggle")
+    panel.style = "--vanish: " + 0 + "%";
+
+    toggleSkills();
+    removeAnimation();
+    callAll();
+};
+
+
+function toggleSkills() {
+    const about = document.querySelector("#skills");
+    const toggled = about.getAttribute("toggled") === "1";
+
+    if(toggled) {
+        about.setAttribute("toggled", "0")
+        about.style = "--vanish: 150%;"
+        return;
+    }
+    about.setAttribute("toggled", "1")
+    about.style = "--vanish: 0%;"
+}
 function toggleAbout() {
-    const about = document.querySelector(".about");
+    const about = document.querySelector("#about");
     const toggled = about.getAttribute("toggled") === "1";
 
     if(toggled) {
@@ -108,5 +151,7 @@ for (var i = 0; i < buttons.length; i++) {
 for (var i = 0; i < vanishable_buttons.length; i++) {
     vanishable_buttons[i].addEventListener("click", function () {
         panel.style = "--vanish: " + 150 + "%";
+        removeAnimation();
+        callAll();
     });
 }

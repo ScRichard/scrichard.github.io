@@ -7,6 +7,15 @@
 }
 html, body {
     overflow: hidden;
+    @media screen and (max-height: 600px ) {
+        overflow:scroll;
+    }
+}
+.custom-section{
+    overflow: hidden;
+    width: 100svw;
+    height: 100svh;
+    display: block;
 }
 :root {
     --color-bg1: rgb(65, 42, 150);
@@ -61,9 +70,9 @@ html, body {
   
   
   .gradient-bg {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    position:fixed;
     overflow: hidden;
     background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
     top: 0;
@@ -347,7 +356,7 @@ a {
         }
     }
 }
-.about {
+.second {
     top: calc(50% - var(--vanish));
     left: 50%;
     padding: 10px;
@@ -363,12 +372,32 @@ a {
     backdrop-filter: blur(10px);
     gap: 20px;
     transition: all 0.6s ease-in-out;
+    &.overflow {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 70%;
+    }
+    &::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 0 10px 10px 0;
+    }
+       
+    &::-webkit-scrollbar-track {
+        background: rgb(20, 20, 20);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 0 10px 10px 0;
+    }
+       
+    &::-webkit-scrollbar-thumb {
+        background: rgb(26, 26, 26);
+        border-radius: 0 10px 10px 0;
+    }
 
     @media screen and (max-width: 600px ) {
         width: 90%;
         padding: 10px;
 
-        height: 90svh;
+        height: fit-content;
 
         gap: 1.5rem;
         align-items: center;
@@ -377,7 +406,7 @@ a {
     @media screen and (max-height: 600px ) {
         width: 90%;
         padding: 10px;
-        height: 90svh;
+        height: fit-content;
         gap: 1.5rem;
         align-items: center;
     }
@@ -394,6 +423,33 @@ a {
         }
     }
 
+    & .grid-layout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+}
+@keyframes name {
+
+}
+@keyframes top_to_bottom {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.animated_content {
+    animation: top_to_bottom var(--speed) ease-in-out;
 }
 
 .project {
@@ -405,7 +461,6 @@ a {
     color: white;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
-    overflow: hidden;
     border: 2px solid #ffffff00;
     & .title {
         font-weight: bold;
@@ -441,6 +496,23 @@ a {
             background: linear-gradient(135deg, #ffffff0c 45%, #00000000, #00000000 ,#00000000);
         }
     }
+    & .bar {
+        position: relative;
+        width: 100%;
+        height: 15px;
+        background-color: #161616;
+        border-radius: 10px;
+        overflow: hidden;
+        &::before {
+            content: "";
+            width: var(--width);
+            height: 15px;
+            background-color: #c2c2c2;
+            position: absolute;
+            left: 0;
+            top: 0; 
+        }
+    }
 }
 
 nav {
@@ -465,18 +537,18 @@ nav {
 
     @media screen and (max-width: 600px ) {
         position: relative;
-        width: 200px;
-        height: 200px;
-        display: block;
+        width: 100px;
+        height: 100px;
+        display:flex ;
         left: 0%;
         transform: translate(0%, 0%);
     }
 
     @media screen and (max-height: 600px ) {
         position: relative;
-        width: 200px;
-        height: 200px;
-        display: block;
+        width: 100px;
+        height: 100px;
+        display:flex;
         left: 0%;
         transform: translate(0%, 0%);
     }
@@ -492,6 +564,17 @@ nav {
         border: 3px solid #ff0000;
         border-radius: 50%;
         animation: glitch 2s infinite ease-in-out;
+        
+        @media screen and (max-width: 600px ) {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media screen and (max-height: 600px ) {
+            width: 100px;
+            height: 100px;
+        }
+
     }
     &::after {
         content:"";
@@ -504,6 +587,15 @@ nav {
         border: 3px solid #ffffff;
         border-radius: 50%;
         animation: glitch 2.5s infinite ease-in-out;
+        @media screen and (max-width: 600px ) {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media screen and (max-height: 600px ) {
+            width: 100px;
+            height: 100px;
+        }
     }
 }
 
